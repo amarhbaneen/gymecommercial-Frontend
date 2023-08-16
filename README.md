@@ -22,13 +22,13 @@ This project aims to enhance your fitness journey by providing easy access to su
 ### Installation
 
 1. Clone this repository.
-   git clone https://github.com/amarhbaneen/gymecommercial-Frontend
+    -git clone https://github.com/amarhbaneen/gymecommercial-Frontend
 2. Navigate to the project directory.
-   cd angular-ecommerce
+    -cd angular-ecommerce
 3. Install dependencies
-   npm install
+   - npm install
 4. Run the application.
-   ng serve
+   - ng serve
 5. Open your browser and go to `http://localhost:4200` to see the app.
 
 ## Contributing
