@@ -39,6 +39,14 @@ if(CategoryId == 0){
 
 
   }
+
+  searchProducts(keyWord :string):Observable<Product[]> {
+    const searchUrl = `${this.baseUrl}/search/findBynameContaining?name=${keyWord}`;
+
+    return this.httpClien.get<GetResponseProducts>(searchUrl).pipe(
+      map(response => response._embedded.products));
+
+  }
 }
 
 
