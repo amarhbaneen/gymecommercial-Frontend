@@ -9,7 +9,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProductCategoryMenuComponent } from './product-category-menu/product-category-menu.component';
 const routes: Routes =[
-  {path : 'category/:id' , component: ProductListComponent},
+  {path : 'category/:id/:name' , component: ProductListComponent},
   {path : 'products' , component: ProductListComponent},
   {path : 'category' , component: ProductListComponent},
   {path : '' , redirectTo : '/products' , pathMatch: 'full'},
@@ -17,7 +17,7 @@ const routes: Routes =[
 ]
 @NgModule({
   declarations: [
-    
+
     AppComponent,
     ProductListComponent,
     PageNotFoundComponent,
