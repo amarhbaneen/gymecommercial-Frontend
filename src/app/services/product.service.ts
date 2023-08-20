@@ -34,8 +34,8 @@ if(CategoryId == 0){
   }
 
   getProductCategories():Observable<ProductCategory[]> {
-      return this.httpClien.get<GetResponseProductsCategory>(this.CategoryURL).pipe(
-        map(response => response._embedded.product_category));
+    return this.httpClien.get<GetResponseProductsCategory>(this.CategoryURL).pipe(
+        map(response => response._embedded["product category"]));
 
 
   }
@@ -50,6 +50,6 @@ interface GetResponseProducts{
 
 interface GetResponseProductsCategory{
   _embedded:{
-    product_category : ProductCategory[];
+    "product category" : ProductCategory[];
   }
 }

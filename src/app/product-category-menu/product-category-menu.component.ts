@@ -17,12 +17,15 @@ export class ProductCategoryMenuComponent implements OnInit {
     this.listProductCategories();
   }
 
-   listProductCategories() {
+
+  private listProductCategories() {
     this.proudctService.getProductCategories().subscribe(
       data =>{
-        console.log(JSON.stringify(data));
         this.productCategories = data;
+      },
+      error => {
+        console.error('Error fetching product categories:', error);
       }
-    );
+    )
   }
 }
