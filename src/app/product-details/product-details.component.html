@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #f4f4f4;
+      font-family: Arial, sans-serif;
+    }
+    .detail-section {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .detail-section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    .detail-img {
+      max-width: 100%;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+    .detail-img:hover {
+      transform: scale(1.05);
+    }
+    .product-details {
+      flex-grow: 1;
+      padding-left: 30px;
+    }
+    .product-name {
+      font-size: 28px;
+      margin-top: 20px;
+      color: #333;
+      font-weight: bold;
+    }
+    .price {
+      font-size: 24px;
+      color: #b12704;
+      margin-top: 15px;
+    }
+    .primary-btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 20px;
+      background-color: #f0c14b;
+      color: #1a1a1a;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    .primary-btn:hover {
+      background-color: #e3a30a;
+    }
+    .product-field {
+      font-size: 18px;
+      color: #666;
+      margin-top: 15px;
+    }
+    .back-link {
+      display: inline-block;
+      color: #0066c0;
+      margin-top: 20px;
+      font-size: 18px;
+      transition: color 0.3s ease;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .back-link:hover {
+      color: #0050a6;
+    }
+    .reviews-section {
+      margin-top: 40px;
+      padding-top: 40px;
+      border-top: 1px solid #ccc;
+    }
+    .review-item {
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #eee;
+    }
+    .review-author {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .review-rating {
+      color: #f0c14b;
+    }
+    .review-text {
+      font-size: 16px;
+      color: #333;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+      <div class="detail-section">
+        <div class="col-md-5">
+          <img class="detail-img img-fluid" src="{{product.imageUrl}}" alt="Product Image">
+        </div>
+        <div class="product-details">
+          <h1 class="product-name">{{product.name}}</h1>
+          <div class="price">{{product.price| currency:"ILS"}}</div>
+          <div class="product-field">Category: {{product.category_id}}</div>
+          <div class="product-field">Color: Black</div>
+          <div class="product-field">Rating: ★★★★☆</div>
+          <a href="#" class="primary-btn">Add to Cart</a>
+          <hr>
+          <p class="product-description">
+            {{product.description}}
+          </p>
+          <a href="/products" class="back-link">← Back to Product List</a>
+        </div>
+      </div>
+      <div class="reviews-section">
+        <h2>Customer Reviews</h2>
+        <div class="review-item">
+          <div class="review-author">John Doe</div>
+          <div class="review-rating">★★★★★</div>
+          <div class="review-text">
+            This product is amazing! I couldn't be happier with my purchase. It's exactly what I was looking for.
+          </div>
+        </div>
+        <div class="review-item">
+          <div class="review-author">Jane Smith</div>
+          <div class="review-rating">★★★☆☆</div>
+          <div class="review-text">
+            The product is decent, but the price seems a bit high for the quality. It's an okay purchase.
+          </div>
+        </div>
+        <div class="review-item">
+          <div class="review-author">Alice Johnson</div>
+          <div class="review-rating">★★★★★</div>
+          <div class="review-text">
+            I'm very impressed with the quality and functionality of this product. It's worth every penny.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+.search-bar {
+  background-color: #fff;
+  border-radius: 25px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.search-input {
+  border: none;
+  padding: 15px;
+  font-size: 1rem;
+  width: 300px;
+  outline: none;
+}
+
+.search-button {
+  background-color: #007bff;
+  border: none;
+  border-radius: 0 25px 25px 0;
+  color: #fff;
+  padding: 15px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: #0056b3;
+}

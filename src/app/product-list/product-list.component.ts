@@ -60,9 +60,10 @@ export class ProductListComponent implements OnInit {
     this.prodcutService.searchProducts(keyWord).subscribe(
       data => {
         this.products = data;
-        alert(JSON.stringify(this.products));
       }
     )
 
   }
+
+  protected readonly Product = Product;
 }

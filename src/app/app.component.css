@@ -1,0 +1,55 @@
+/* Custom CSS adjustments */
+
+/* Ensure the footer sticks to the bottom */
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.page-container {
+  flex: 1;
+}
+
+/* Adjust header layout */
+.header-desktop {
+  padding: 10px 0; /* Add padding to the header for spacing */
+}
+
+.header-wrap {
+  display: flex;
+  justify-content: space-between; /* Distribute items along the main axis */
+  align-items: center; /* Vertically center items */
+}
+
+/* Add margin between search bar and icon */
+.app-search-bar {
+  margin-right: 10px;
+}
+
+/* Add custom styles to the footer */
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Reset default margins and paddings */
+body, h1, h2, h3, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Adjust header container margin */
+.header-container {
+  margin: 20px 0; /* Top and bottom margin */
+}
+
+/* Additional styles for the cart area */
+.cart-area {
+  display: flex;
+  align-items: center;
+}
+
+

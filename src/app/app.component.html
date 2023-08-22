@@ -1,74 +1,59 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-  <!-- Bootstrap CSS and Font Awesome -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" media="all">
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Your Page Title</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    .header-container {
+      margin: 20px;
+    }
+    .header-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .cart-area {
+      display: flex;
+      align-items: center;
+    }
+    /* Add your custom styles here */
+  </style>
 </head>
-
 <body>
-	<div class="page-wrapper">
-    <aside class="menu-sidebar d-none d-lg-block">
-      <div class="logo">
-        <a href="home.html">
-          <img src="assets\Icons\pngwing.com.ico" alt="Fitness Cave"  width="80">
-        </a>
+<div class="page-container">
+  <div class="header-container">
+    <header class="header-desktop">
+      <div class="section-content section-content-p30">
+        <div class="container-fluid">
+          <div class="header-wrap">
+            <app-search-bar></app-search-bar>
+            <div class="cart-area">
+              <a href="shopping-detail.html">
+                <div class="total">0<span>0</span></div>
+                <i class="fas fa-shopping-cart cart-icon"></i>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
+    </header>
+  </div>
+  <div> <router-outlet></router-outlet>
+
+    <aside class="menu-sidebar d-none d-lg-block">
+
       <app-product-category-menu></app-product-category-menu>
-    </aside>
+    </aside></div>
 
 
-		<!-- PAGE CONTAINER-->
-		<div class="page-container">
-			<!-- HEADER DESKTOP-->
-			<header class="header-desktop">
-				<div class="section-content section-content-p30">
-					<div class="container-fluid">
-						<div class="header-wrap">
-							<app-search-bar></app-search-bar>
-							<div class="cart-area d-n">
-								<a href="shopping-detail.html">
-									<div class="total">  0<span> 0</span> </div>
-                   <i class="bi bi-cart"
-										></i>
-								</a>
-							</div>
-						</div>
-						<div class="account-wrap"></div>
-					</div>
-				</div>
-			</header>
-			<!-- END HEADER DESKTOP-->
-
-			<!-- MAIN CONTENT-->
-			<router-outlet></router-outlet>
-
-		    <!-- END MAIN CONTENT-->
-
-		</div>
-	</div>
-
-	<!-- END PAGE CONTAINER-->
-
-
-	<footer>
-		<ul>
-			<li><a href="#">About Us</a></li>
-			<li><a href="#">Contact Us</a></li>
-			<li><a href="#">Help</a></li>
-		</ul>
-	</footer>
-
+</div>
 </body>
-
 </html>
-<!-- end document-->

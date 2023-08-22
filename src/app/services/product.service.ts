@@ -47,6 +47,14 @@ if(CategoryId == 0){
       map(response => response._embedded.products));
 
   }
+
+  getProduct(theProductId: number) {
+    const ProductUrl = `${this.baseUrl}/${theProductId}`;
+
+    return this.httpClien.get<Product>(ProductUrl);
+
+
+  }
 }
 
 
