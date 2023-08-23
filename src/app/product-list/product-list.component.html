@@ -132,10 +132,21 @@
         </div>
       </div>
       </div>
-
-    <ngb-pagination [collectionSize]="theTotalElements" [(page)]="thePageNumber" [pageSize]="thePageSize" (pageChange)="listProducts()">
+    <div class = row>
+      <div class="col-md-9" style="padding-left: 50%">
+    <ngb-pagination [collectionSize]="theTotalElements" [(page)]="thePageNumber" [pageSize]="thePageSize" [maxSize]="3" (pageChange)="listProducts()">
     </ngb-pagination>
-
+      </div>
+      <div class="col-md-3 mt-2" style="text-align: right;">
+        <span class="mr-2">Items Per Page</span>
+        <select #ProductPageSelector (change)="UpdatePageSize(ProductPageSelector.value)">
+          <option selected="true">1</option>
+          <option>2</option>
+          <option>5</option>
+          <option>10</option>
+        </select>
+      </div>
+    </div>
 
   </div>
 

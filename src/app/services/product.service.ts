@@ -36,7 +36,7 @@ export class ProductService {
   getProductListPaginate(thePage: number, thePageSize: number, CategoryId: number): Observable<GetResponseProducts> {
 
     const searchUrl = `${this.baseUrl}/search/findByCategoryId?categoryId=${CategoryId}&page=${thePage}&size=${thePageSize}`
-    const allSearchURL = `${this.baseUrl}?size=${thePageSize}`
+    const allSearchURL = `${this.baseUrl}?size=${thePageSize}&page=${thePage}`
     if (CategoryId == 0) {
       return this.httpClien.get<GetResponseProducts>(allSearchURL)
     } else {
@@ -58,6 +58,11 @@ export class ProductService {
 
     return this.httpClien.get<GetResponseProducts>(searchUrl).pipe(
       map(response => response._embedded.products));
+
+  } searchProductsPaginate (thePage: number, thePageSize: number,keyWord: string): Observable<GetResponseProducts> {
+    const searchUrl = `${this.baseUrl}/search/findBynameContaining?name=${keyWord}`+`&page=${thePage}&size=${thePageSize}`;
+
+    return this.httpClien.get<GetResponseProducts>(searchUrl);
 
   }
 

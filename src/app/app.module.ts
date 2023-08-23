@@ -13,6 +13,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import {NgxPaginationModule} from "ngx-pagination";
+import { CartStatusComponent } from './cart-status/cart-status.component';
 
 const routes: Routes =[
   {path : 'product/:id' , component: ProductDetailsComponent},
@@ -32,6 +33,7 @@ const routes: Routes =[
     ProductCategoryMenuComponent,
     SearchBarComponent,
     ProductDetailsComponent,
+    CartStatusComponent,
 
   ],
   imports: [
