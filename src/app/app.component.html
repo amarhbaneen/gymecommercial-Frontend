@@ -29,23 +29,18 @@
 </head>
 <body>
 <div class="page-container">
-  <div class="header-container">
+
     <header class="header-desktop">
       <div class="section-content section-content-p30">
         <div class="container-fluid">
           <div class="header-wrap">
             <app-search-bar></app-search-bar>
-            <div class="cart-area">
-              <a href="shopping-detail.html">
-                <div class="total">0<span>0</span></div>
-                <i class="fas fa-shopping-cart cart-icon"></i>
-              </a>
-            </div>
+            <app-cart-status></app-cart-status>
           </div>
         </div>
       </div>
     </header>
-  </div>
+
   <div> <router-outlet></router-outlet>
 
     <aside class="menu-sidebar d-none d-lg-block">
