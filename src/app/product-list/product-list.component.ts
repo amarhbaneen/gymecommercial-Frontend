@@ -30,10 +30,10 @@ export class ProductListComponent implements OnInit {
     this.route.paramMap.subscribe(() => {
       this.listProducts();
     })
-    console.log(this.thePageNumber, this.thePageSize, this.theTotalElements);
   }
 
   listProducts() {
+
     this.searchMode = this.route.snapshot.paramMap.has('keyword');
     if (this.searchMode) {
       this.handleSearchProdcuts();
@@ -52,19 +52,17 @@ export class ProductListComponent implements OnInit {
       // get the "name" param string
       this.currentCategoryName = this.route.snapshot.paramMap.get('name')!;
     }
-    // Check if we have a different category that previous
-    if (this.previousCategoryId != this.currentCategoryID) {
+    if(this.currentCategoryID != this.previousCategoryId){
       this.thePageNumber = 1;
     }
-
-
+    this.previousCategoryId = this.currentCategoryID;
     this.productService.getProductListPaginate(this.thePageNumber - 1, this.thePageSize, this.currentCategoryID).subscribe(
       data => {
-        this.products = data._embedded.products,
-          console.log(this.products)
-        this.thePageNumber = data.page.number + 1 ,
-          this.thePageSize = data.page.size;
-        this.theTotalElements = data.page.totalElemnets;
+        this.products = data._embedded.products;
+        this.thePageNumber = data.page.number + 1;
+        this.thePageSize = data.page.size;
+        this.theTotalElements = data.page.totalElements;
+
       }
     )
   }

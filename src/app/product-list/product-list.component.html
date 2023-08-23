@@ -114,7 +114,7 @@
 
     <div class="container-fluid">
       <div class="row">
-        <div *ngFor="let Temproduct of products" class="col-md-3">
+        <div *ngFor="let Temproduct of products " class="col-md-3">
           <div class="product-box">
             <a routerLink="/product/{{Temproduct.productId}}" class="image-container">
               <img src="{{Temproduct.imageUrl}}" alt="{{Temproduct.name}} ">
@@ -127,16 +127,14 @@
             <button type="button" class="btn btn-primary">Add to Cart</button>
           </div>
         </div>
+        <div *ngIf="products?.length === 0" class="no-products">
+          No Products Found.
+        </div>
+      </div>
       </div>
 
-      <div *ngIf="products?.length === 0" class="no-products">
-        No Products Found.
-      </div>
-    </div>
-    <div class="col-md-9" style="padding-left: 30%">
-      <ngb-pagination [(page)]="thePageNumber" [pageSize]="thePageSize" [collectionSize]="theTotalElements" (pageChange)="listProducts()">
-      </ngb-pagination>
-    </div>
+    <ngb-pagination [collectionSize]="theTotalElements" [(page)]="thePageNumber" [pageSize]="thePageSize" (pageChange)="listProducts()">
+    </ngb-pagination>
 
 
   </div>

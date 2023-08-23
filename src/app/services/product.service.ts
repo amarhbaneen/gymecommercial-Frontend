@@ -77,7 +77,7 @@ interface GetResponseProducts {
   },
   page: {
     size: number,
-    totalElemnets: number,
+    totalElements: number,
     totalPages: number,
     number: number
   }

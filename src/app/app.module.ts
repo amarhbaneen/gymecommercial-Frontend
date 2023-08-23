@@ -12,6 +12,7 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
+import {NgxPaginationModule} from "ngx-pagination";
 
 const routes: Routes =[
   {path : 'product/:id' , component: ProductDetailsComponent},
@@ -37,7 +38,8 @@ const routes: Routes =[
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
-    NgbModule
+    NgbModule,
+    NgxPaginationModule
   ],
   providers: [
     ProductService
