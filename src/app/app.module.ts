@@ -10,6 +10,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { ProductCategoryMenuComponent } from './product-category-menu/product-category-menu.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+
+import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
+
 const routes: Routes =[
   {path : 'product/:id' , component: ProductDetailsComponent},
   {path : 'search/:keyword' , component: ProductListComponent},
@@ -33,7 +36,8 @@ const routes: Routes =[
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    NgbModule
   ],
   providers: [
     ProductService

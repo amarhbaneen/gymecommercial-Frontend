@@ -114,15 +114,15 @@
 
     <div class="container-fluid">
       <div class="row">
-        <div *ngFor="let Temproduct of products" class="col-md-3">
+        <div *ngFor="let Temproduct of products | slice:(thePageNumber-1)*thePageSize : (thePageNumber-1)* thePageSize+thePageNumber" class="col-md-3">
           <div class="product-box">
             <a routerLink="/product/{{Temproduct.productId}}" class="image-container">
-              <img src="{{Temproduct.imageUrl}}" alt="{{Temproduct.name}}">
+              <img src="{{Temproduct.imageUrl}}" alt="{{Temproduct.name}} ">
             </a>
             <a routerLink="/product/{{Temproduct.productId}}">
               <h1>{{Temproduct.name}}</h1>
             </a>
-            <div class="price">{{Temproduct.price | currency:'USD'}}</div>
+            <div class="price">{{Temproduct.price | currency:'ILS'}}</div>
             <div class="price">in Stock: {{Temproduct.stockQuantity}}</div>
             <button type="button" class="btn btn-primary">Add to Cart</button>
           </div>
@@ -133,7 +133,15 @@
         No Products Found.
       </div>
     </div>
+    <div class="col-md-9" style="padding-left: 30%">
+      <ngb-pagination [(page)]="thePageNumber" [pageSize]="thePageSize" [collectionSize]="products.length" (pageChange)="listProducts()">
+      </ngb-pagination>
+    </div>
+
+
   </div>
+
+
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

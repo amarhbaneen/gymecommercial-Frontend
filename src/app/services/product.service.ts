@@ -32,6 +32,19 @@ if(CategoryId == 0){
     )
 
   }
+  getProductListPaginate(thePage: number, thePageSize: number , CategoryId:number): Observable<GetResponseProducts>{
+
+    const searchUrl = `${this.baseUrl}/search/findByCategoryId?categoryId=${CategoryId}&page=${thePage}&size=${thePageSize}`
+    const allSearchURL  = `${this.baseUrl}?page=${thePage}&size=${thePageSize}`
+    if(CategoryId == 0 ){
+      return this.httpClien.get<GetResponseProducts>(allSearchURL)
+    }
+    else{
+      return this.httpClien.get<GetResponseProducts>(searchUrl);
+
+    }
+
+  }
 
   getProductCategories():Observable<ProductCategory[]> {
     return this.httpClien.get<GetResponseProductsCategory>(this.CategoryURL).pipe(
@@ -61,6 +74,12 @@ if(CategoryId == 0){
 interface GetResponseProducts{
   _embedded:{
     products : Product[];
+  },
+  page:{
+    size:number,
+    totalElemnets:number,
+    totalPages: number,
+    number: number
   }
 }
 
