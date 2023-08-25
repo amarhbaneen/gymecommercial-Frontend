@@ -98,6 +98,5 @@ export class ProductListComponent implements OnInit {
   addToCart(theProduct:Product){
     console.log('adding to cart :'+ theProduct.name + ',' + theProduct.price);
 
-    // TODO adding the code to calculate the new Cart price and Update the Database
   }
 }
