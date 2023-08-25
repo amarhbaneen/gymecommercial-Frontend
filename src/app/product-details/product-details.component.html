@@ -116,7 +116,7 @@
           <div class="product-field">Category: {{product.category_id}}</div>
           <div class="product-field">Color: Black</div>
           <div class="product-field">Rating: ★★★★☆</div>
-          <a href="#" class="primary-btn">Add to Cart</a>
+          <div (click)="addtoCart()" class="primary-btn">Add to Cart</div>
           <hr>
           <p class="product-description">
             {{product.description}}
