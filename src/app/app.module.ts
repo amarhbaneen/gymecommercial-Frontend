@@ -15,8 +15,15 @@ import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import {NgxPaginationModule} from "ngx-pagination";
 import { CartStatusComponent } from './cart-status/cart-status.component';
 
+
+import { CartDetailsComponent } from './cart-details/cart-details.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import {ReactiveFormsModule} from "@angular/forms";
+
 const routes: Routes =[
+  {path : 'checkout' , component:CheckoutComponent},
   {path : 'product/:id' , component: ProductDetailsComponent},
+  {path : 'cart-details' , component: CartDetailsComponent},
   {path : 'search/:keyword' , component: ProductListComponent},
   {path : 'category/:id/:name' , component: ProductListComponent},
   {path : 'products' , component: ProductListComponent},
@@ -34,6 +41,8 @@ const routes: Routes =[
     SearchBarComponent,
     ProductDetailsComponent,
     CartStatusComponent,
+    CartDetailsComponent,
+    CheckoutComponent,
 
   ],
   imports: [
@@ -41,7 +50,8 @@ const routes: Routes =[
     HttpClientModule,
     RouterModule.forRoot(routes),
     NgbModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    ReactiveFormsModule
   ],
   providers: [
     ProductService

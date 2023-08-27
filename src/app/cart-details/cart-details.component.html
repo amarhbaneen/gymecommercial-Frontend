@@ -1,0 +1,40 @@
+<div class="main-content">
+  <div class="section-content section-content-p30">
+    <div class="container-fluid">
+      <div class="cart-container">
+        <h2>Your Shopping Cart</h2>
+        <div class="cart-items" *ngIf="cartItems.length > 0; else emptyCart">
+          <div class="cart-item" *ngFor="let tempCartItem of cartItems">
+            <div class="product-info">
+              <img src="{{ tempCartItem.imageUrl }}" alt="{{ tempCartItem.name }}" class="product-image">
+              <div class="product-details">
+                <h3 class="product-name">{{ tempCartItem.name }}</h3>
+                <p class="product-price">{{ tempCartItem.unitPrice | currency:'ILS' }}</p>
+              </div>
+            </div>
+            <div class="quantity-controls">
+              <button (click)="decrementQuantity(tempCartItem)" class="quantity-button">-</button>
+              <span class="product-quantity">{{ tempCartItem.quanity }}</span>
+              <button (click)="incrementQuantity(tempCartItem)" class="quantity-button">+</button>
+            </div>
+            <div class="subtotal">
+              <p class="product-subtotal">{{ (tempCartItem.quanity * tempCartItem.unitPrice) | currency:'ILS' }}</p>
+              <button (click)="removeItem(tempCartItem)" class="remove-button">Remove</button>
+            </div>
+          </div>
+          <div class="cart-summary">
+            <p class="total-quantity">Total Quantity: {{ totalQuantity }}</p>
+            <p class="shipping">Shipping: Free</p>
+            <p class="total-price">Total Price: {{ totalPrice | currency:'ILS' }}</p>
+            <a routerLink="/checkout" class="btn btn-primary">Checkout</a>
+          </div>
+        </div>
+        <ng-template #emptyCart>
+          <div class="empty-cart-alert">
+            Your shopping cart is empty!
+          </div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>
